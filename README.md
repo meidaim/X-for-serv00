@@ -1,6 +1,6 @@
 >鸣谢 fscarmen2 的开源仓库 [fscarmen2/Argo-Xray-JS-PaaS](https://github.com/fscarmen2/Argo-Xray-JS-PaaS) ，本仓库是基于此仓库的基础进行了 FreeBSD 相关命令的替换，并根据 Serv00 的实际环境进行了部分功能的删减与增加。
 ----
->**直连版本：[X-for-Serv00 Direct Branch](https://github.com/k0baya/X-for-serv00/tree/direct)**
+>**直连版本：[X-for-Serv00 Direct Branch](https://github.com/meidaim/X-for-serv00/tree/direct)**
 >
 >直连版本实现 Vless、VMess、Trojan 三协议并存，由于不走 Cloudflare CDN，项目特点与 Main 分支不同，部署方法也略有区别，请按需选择。
 ----
@@ -16,7 +16,7 @@
 
 网页根路径为伪装页面，来自 [AkariRin/mikutap](https://github.com/AkariRin/mikutap)
 
->如果你还想安装 nezha 探针，可以参考 [k0baya/nezha4serv00](https://github.com/k0baya/nezha4serv00) 。
+>如果你还想安装 nezha 探针，可以参考 [meidaim/nezha4serv00](https://github.com/meidaim/nezha4serv00) 。
 
 ### 部署
 #### 准备工作
@@ -37,7 +37,7 @@ devil binexec on
 ```
 接着断开 SSH 并重新连接，输入以下命令：
 ```shell
-bash <(curl -Ls https://raw.githubusercontent.com/k0baya/x-for-serv00/main/entrypoint.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/meidaim/x-for-serv00/main/entrypoint.sh)
 ```
 并按照提示输入相关信息。
 
@@ -80,7 +80,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/k0baya/x-for-serv00/main/entry
 
 ### 常见问题
 1. 已知部分客户端（如 V2rayNG）可能出现导入配置识别不正确的情况，如 vless 协议 `ws path` 在默认值的情况下原本为 `/serv00-vless?ed=2560` ，会被客户端识别为 `/serv00-vless?ed` 等等不完整的情况，通过手动补全即可正常使用。
-2. 已知部分 Server （目前已知 s7 和 s8）已经使用 hosts 屏蔽了 Cloudflared 客户端的下载地址，可以通过手动上传二进制文件的方法解决，具体参照：[#19](https://github.com/k0baya/X-for-serv00/issues/19#issuecomment-2266315320)
+2. 已知部分 Server （目前已知 s7 和 s8）已经使用 hosts 屏蔽了 Cloudflared 客户端的下载地址，可以通过手动上传二进制文件的方法解决，具体参照：[#19](https://github.com/meidaim/X-for-serv00/issues/19#issuecomment-2266315320)
 3. 如果脚本自动放行端口失败，请手动去面板中添加三个类型为 TCP 的端口，再重新执行安装脚本。
 
 补充中... 
